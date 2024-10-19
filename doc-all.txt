@@ -1,2 +1,2 @@
-<a href="">VisiOSとは</a>
-<a href="">主な機能</a>
+<a href="javascript:doc("VisiOSとは")">VisiOSとは</a>
+<a href="javascript:doc("主な機能")">主な機能</a>
