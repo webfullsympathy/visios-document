@@ -1,0 +1,2 @@
+<h1>VisiOSとは</h1>
+<h4>VisiOSとは、<a href="https://x.com/ExisJP">Exisさん</a>によって開発されているブラウザ拡張機能である。<br>ブックマーク機能に仮想OS的な機能を載せたのが売りの拡張機能。<br>Chromiumベースのブラウザは全て対応しているのもいい点。<br>(Chrome・Edge・Opera・Brave・Vivaldiなど)</h4>
