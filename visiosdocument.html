@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>VisiOS Document</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/webfullsympathy/visios-document/refs/heads/main/visios.png">
+    <style>
+        body{
+            background-color: #5da0ff;
+        }
+        #welcome_text{
+            font-size: 300%;
+            font-weight: bold;
+        }
+        #doc-view{
+            display: none;
+        }
+    </style>
+    <script>
+        function doc_close() {
+            document.getElementById("doc-view").style.display = "none"
+        }
+        function data_fetch() {
+            fetch("https://raw.githubusercontent.com/webfullsympathy/visios-document/refs/heads/main/doc-all.txt")
+            .then(response => response.text())
+            .then(data => {
+                const data2 = data.replace(/\n/g,"<br>")
+                document.getElementById("doc-all").innerHTML = data2
+            })
+        }
+        function doc(title){
+            fetch("https://raw.githubusercontent.com/webfullsympathy/visios-document/refs/heads/main/doc/" + title + ".txt")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("doc-view").style.display = "block"
+                document.getElementById("doc-view").innerHTML = data + "<br><button onclick='doc_close()' style='background-color: #1F2937;color: #ffffff;'>閉じる</button>"
+            })
+        }
+        data_fetch()
+    </script>
+</head>
+<body>
+    <div>
+        <img src="https://raw.githubusercontent.com/webfullsympathy/visios-document/refs/heads/main/visios.png">
+        <span id="welcome_text">VisiOS Documentへようこそ！</span>
+    </div>
+    <h1>このドキュメントについて</h1>
+    <h3>このドキュメントは非公式です。<br>必ずしも正しいことは保証しません。<br>また、横画面で見ることをお勧めします。</h3>
+    <h1>記事一覧</h1>
+    <h3 id="doc-all"><img src="https://raw.githubusercontent.com/webfullsympathy/visios-document/refs/heads/main/load.gif" alt="load" width="10%"></h3>
+    <br style="margin-top: 10%">
+    <div id="doc-view"><img src="https://raw.githubusercontent.com/webfullsympathy/visios-document/refs/heads/main/load.gif" alt="load" width="10%"></div>
+</body>
+</html>
